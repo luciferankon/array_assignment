@@ -24,6 +24,15 @@ const pickEvenNumbers = function(givenNumbers){
   return evenNumbers;
 }
 
+const calculateSum = function(givenNumbers){
+  let sum = 0;
+  for(let number of givenNumbers){
+    sum = sum + number;
+  }
+  return sum;
+}
 
-exports.pickOddNumbers=pickOddNumbers;
-exports.pickEvenNumbers=pickEvenNumbers;
+
+exports.pickOddNumbers = pickOddNumbers;
+exports.pickEvenNumbers = pickEvenNumbers;
+exports.calculateSum = calculateSum;
