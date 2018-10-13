@@ -32,7 +32,16 @@ const calculateSum = function(givenNumbers){
   return sum;
 }
 
+const reverseArray = function(array){
+  let reversedArray = [];
+  for(let index=0; index<array.length; index++){
+    reversedArray[array.length-index-1]=array[index];
+  }
+  return reversedArray;
+}
+
 
 exports.pickOddNumbers = pickOddNumbers;
 exports.pickEvenNumbers = pickEvenNumbers;
 exports.calculateSum = calculateSum;
+exports.reverseArray = reverseArray;

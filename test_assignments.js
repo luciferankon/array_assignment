@@ -23,3 +23,9 @@ assert.deepEqual(lib.calculateSum([]),0);
 assert.deepEqual(lib.calculateSum([1]),1);
 //check for 2 element array should give me back the sum of them
 assert.deepEqual(lib.calculateSum([1,2]),3);
+//tests for reversing an array
+//check for empty array should give me back an empty array
+assert.deepEqual(lib.reverseArray([]),[]);
+
+
+
