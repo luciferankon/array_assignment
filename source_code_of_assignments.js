@@ -4,7 +4,7 @@ const isOdd = function(number){
 const isEven = function(number){
   return number % 2 == 0;
 }
-const pickOddNumbers = function(givenNumbers){
+exports.pickOddNumbers = function(givenNumbers){
   let oddNumbers = [];
   for(let number of givenNumbers){
     if(isOdd(number)){
@@ -14,7 +14,7 @@ const pickOddNumbers = function(givenNumbers){
   return oddNumbers;
 }
 
-const pickEvenNumbers = function(givenNumbers){
+exports.pickEvenNumbers = function(givenNumbers){
   let evenNumbers = [];
   for(let number of givenNumbers){
     if(isEven(number)){
@@ -24,7 +24,7 @@ const pickEvenNumbers = function(givenNumbers){
   return evenNumbers;
 }
 
-const calculateSum = function(givenNumbers){
+exports.calculateSum = function(givenNumbers){
   let sum = 0;
   for(let number of givenNumbers){
     sum = sum + number;
@@ -32,7 +32,7 @@ const calculateSum = function(givenNumbers){
   return sum;
 }
 
-const reverseArray = function(array){
+exports.reverseArray = function(array){
   let reversedArray = [];
   for(let index=0; index<array.length; index++){
     reversedArray[array.length-index-1]=array[index];
@@ -40,8 +40,3 @@ const reverseArray = function(array){
   return reversedArray;
 }
 
-
-exports.pickOddNumbers = pickOddNumbers;
-exports.pickEvenNumbers = pickEvenNumbers;
-exports.calculateSum = calculateSum;
-exports.reverseArray = reverseArray;
