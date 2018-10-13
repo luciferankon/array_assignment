@@ -33,10 +33,6 @@ exports.calculateSum = function(givenNumbers){
 }
 
 exports.reverseArray = function(array){
-  let reversedArray = [];
-  for(let index=0; index<array.length; index++){
-    reversedArray[array.length-index-1]=array[index];
-  }
-  return reversedArray;
+  return array.reverse();
 }
 
