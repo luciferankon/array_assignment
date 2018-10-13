@@ -21,3 +21,5 @@ assert.deepEqual(lib.pickEvenNumbers("12323423"),[2,2,4,2]);
 assert.deepEqual(lib.calculateSum([]),0);
 //check for 1 element array should give me back that element
 assert.deepEqual(lib.calculateSum([1]),1);
+//check for 2 element array should give me back the sum of them
+assert.deepEqual(lib.calculateSum([1,2]),3);
