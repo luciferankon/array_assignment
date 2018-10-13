@@ -19,3 +19,5 @@ assert.deepEqual(lib.pickEvenNumbers("12323423"),[2,2,4,2]);
 //tests for the functiom which adds all the numbers of list
 //check for one empty list should give me back nothing
 assert.deepEqual(lib.calculateSum([]),0);
+//check for 1 element array should give me back that element
+assert.deepEqual(lib.calculateSum([1]),1);
