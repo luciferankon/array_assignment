@@ -4,9 +4,9 @@ const isOdd = function(number){
 const isEven = function(number){
   return number % 2 == 0;
 }
-exports.pickOddNumbers = function(givenNumbers){
+exports.pickOddNumbers = function(numbers){
   let oddNumbers = [];
-  for(let number of givenNumbers){
+  for(let number of numbers){
     if(isOdd(number)){
       oddNumbers.push(+number);
     }
@@ -14,9 +14,9 @@ exports.pickOddNumbers = function(givenNumbers){
   return oddNumbers;
 }
 
-exports.pickEvenNumbers = function(givenNumbers){
+exports.pickEvenNumbers = function(numbers){
   let evenNumbers = [];
-  for(let number of givenNumbers){
+  for(let number of numbers){
     if(isEven(number)){
       evenNumbers.push(+number);
     }
@@ -24,9 +24,9 @@ exports.pickEvenNumbers = function(givenNumbers){
   return evenNumbers;
 }
 
-const calculateSum = function(givenNumbers){
+const calculateSum = function(numbers){
   let sum = 0;
-  for(let number of givenNumbers){
+  for(let number of numbers){
     sum = sum + number;
   }
   return sum;
@@ -41,14 +41,14 @@ exports.reverse = function(source){
   return result;
 }
 
-exports.selectEvenElements = function(elements){
-  let selectedElements = [];
+exports.pickEvenElements = function(elements){
+  let pickedElements = [];
   for(index in elements){
     if(index%2==0){
-      selectedElements.push(elements[index]);
+      pickedElements.push(elements[index]);
     }
   }
-  return selectedElements;
+  return pickedElements;
 }
 
 exports.reverseFibonacci = function(limit) {
@@ -71,8 +71,8 @@ const compareNumbers = function(firstNumber,secondNumber){
   return secondNumber;
 }
 
-const isEmpty = function(array){
-  return array.length==0;
+const isEmpty = function(source){
+  return source.length==0;
 }
 exports.findGreatestNumber = function(numbers){
   if(isEmpty(numbers)){
@@ -96,10 +96,10 @@ exports.findSmallestNumber = function(numbers){
   return smallestNumber;
 }
 
-exports.calculateAverage = function(givenNumbers){
-  let sum = calculateSum(givenNumbers);
-  let noOfNumbers = givenNumbers.length;
-  if(isEmpty(givenNumbers)){
+exports.calculateAverage = function(numbers){
+  let sum = calculateSum(numbers);
+  let noOfNumbers = numbers.length;
+  if(isEmpty(numbers)){
     return 0;
   }
   return sum/noOfNumbers;
