@@ -48,18 +48,30 @@ assert.deepEqual(lib.reverseFibonacci(1),[0]);
 //2 should give me back an array [1,0]
 assert.deepEqual(lib.reverseFibonacci(2),[1,0]);
 
-////tests for finding greatest number from a list
-////empty list should give me undefined
-//assert.deepEqual(lib.findGreatestNumber([]),undefined);
-////one element array should give me back that number only
-//assert.deepEqual(lib.findGreatestNumber([1]),1);
-////two number array should give me back the largest number
-//assert.deepEqual(lib.findGreatestNumber([1,2]),2);
-//
-////tests for finding smallest number from a list
-////empty list should give me undefined
-//assert.deepEqual(lib.findSmallestNumber([]),undefined);
-////1 element array should give me back that element
-//assert.deepEqual(lib.findSmallestNumber([1]),1);
-////2 element array should give me back smaller element
+//tests for finding greatest number from a list
+//empty list should give me undefined
+assert.deepEqual(lib.findGreatestNumber([]),undefined);
+//one element array should give me back that number only
+assert.deepEqual(lib.findGreatestNumber([1]),1);
+//two number array should give me back the largest number
+assert.deepEqual(lib.findGreatestNumber([1,2]),2);
+
+//tests for finding smallest number from a list
+//empty list should give me undefined
+assert.deepEqual(lib.findSmallestNumber([]),undefined);
+//1 element array should give me back that element
+assert.deepEqual(lib.findSmallestNumber([1]),1);
+//2 element array should give me back smaller element
 //assert.deepEqual(lib.findSmallestNumber([1,2]),1);
+
+//test for average of a list
+//empty array should give me 0
+assert.deepEqual(lib.calculateAverage([]),0);
+//one element array should return me that element
+assert.deepEqual(lib.calculateAverage([1]),1);
+//two element array should return the average
+assert.deepEqual(lib.calculateAverage([1,2]),1.5);
+
+//test for calculating lengths of elements
+//empty array should give an array holding 0
+//assert.deepEqual(lib.mapLength([]),[0]);

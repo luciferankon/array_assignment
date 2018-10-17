@@ -24,7 +24,7 @@ exports.pickEvenNumbers = function(givenNumbers){
   return evenNumbers;
 }
 
-exports.calculateSum = function(givenNumbers){
+const calculateSum = function(givenNumbers){
   let sum = 0;
   for(let number of givenNumbers){
     sum = sum + number;
@@ -64,34 +64,56 @@ exports.reverseFibonacci = function(limit) {
   return fibonacciSeries;
 }
 
-//const compareNumbers = function(firstNumber,secondNumber){
-//  if(firstNumber>secondNumber){
-//    return firstNumber;
-//  }
-//  return secondNumber;
-//}
+const compareNumbers = function(firstNumber,secondNumber){
+  if(firstNumber>secondNumber){
+    return firstNumber;
+  }
+  return secondNumber;
+}
 
 const isEmpty = function(array){
   return array.length==0;
 }
-//exports.findGreatestNumber = function(numbers){
-//  if(isEmpty(numbers)){
-//    return;
+exports.findGreatestNumber = function(numbers){
+  if(isEmpty(numbers)){
+    return;
+  }
+  let greatestNumber = numbers[0];
+  for(number of numbers){
+    greatestNumber = compareNumbers(greatestNumber,number);
+    }
+  return greatestNumber;
+}
+
+exports.findSmallestNumber = function(numbers){
+  if(isEmpty(numbers)){
+    return;
+  }
+  let smallestNumber = numbers[0];
+  for(number of numbers){
+    smallestNumber = compareNumbers(smallestNumber,number);
+    }
+  return smallestNumber;
+}
+
+exports.calculateAverage = function(givenNumbers){
+  let sum = calculateSum(givenNumbers);
+  let noOfNumbers = givenNumbers.length;
+  if(isEmpty(givenNumbers)){
+    return 0;
+  }
+  return sum/noOfNumbers;
+}
+
+exports.calculateSum = calculateSum;
+
+//exports.mapLength = function(givenStrings){
+//  let lengthArray = [];
+//  if(isEmpty(givenStrings)){
+//    lengthArray.push(0);
 //  }
-//  let greatestNumber = numbers[0];
-//  for(number of numbers){
-//    greatestNumber = compareNumbers(greatestNumber,number);
-//    }
-//  return greatestNumber;
-//}
-//
-//exports.findSmallestNumber = function(numbers){
-//  if(isEmpty(numbers)){
-//    return;
+//  for(let string of givenStrings){
+//    lengthArray.push(string.length);
 //  }
-//  let smallestNumber = numbers[0];
-//  for(number of numbers){
-//    smallestNumber = compareNumbers(smallestNumber,number);
-//    }
-//  return smallestNumber;
+//  return lengthArray;
 //}
