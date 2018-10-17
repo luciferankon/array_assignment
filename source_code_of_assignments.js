@@ -36,3 +36,25 @@ exports.reverseArray = function(array){
   return array.reverse();
 }
 
+exports.selectEvenElements = function(elements){
+  let selectedElements = [];
+  for(index in elements){
+    if(index%2==0){
+      selectedElements.push(elements[index]);
+    }
+  }
+  return selectedElements;
+}
+
+exports.reverseFibonacci = function(limit) {
+  let fibonacciSeries = [];
+  let oldValue = 0;
+  let newValue = 1;
+  for(let count=0; count<limit; count++){
+    let currentValue = oldValue;
+    fibonacciSeries[limit-count-1]=currentValue;
+    oldValue = newValue;
+    newValue = currentValue + newValue;
+  }
+  return fibonacciSeries;
+}
