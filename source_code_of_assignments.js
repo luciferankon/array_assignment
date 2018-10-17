@@ -32,8 +32,13 @@ exports.calculateSum = function(givenNumbers){
   return sum;
 }
 
-exports.reverseArray = function(array){
-  return array.reverse();
+exports.reverse = function(source){
+  let length = source.length;
+  let result =[];
+  for(let index=0; index< length; index++){
+    result[length-index-1] = source[index];
+}
+  return result;
 }
 
 exports.selectEvenElements = function(elements){
@@ -58,3 +63,35 @@ exports.reverseFibonacci = function(limit) {
   }
   return fibonacciSeries;
 }
+
+//const compareNumbers = function(firstNumber,secondNumber){
+//  if(firstNumber>secondNumber){
+//    return firstNumber;
+//  }
+//  return secondNumber;
+//}
+
+const isEmpty = function(array){
+  return array.length==0;
+}
+//exports.findGreatestNumber = function(numbers){
+//  if(isEmpty(numbers)){
+//    return;
+//  }
+//  let greatestNumber = numbers[0];
+//  for(number of numbers){
+//    greatestNumber = compareNumbers(greatestNumber,number);
+//    }
+//  return greatestNumber;
+//}
+//
+//exports.findSmallestNumber = function(numbers){
+//  if(isEmpty(numbers)){
+//    return;
+//  }
+//  let smallestNumber = numbers[0];
+//  for(number of numbers){
+//    smallestNumber = compareNumbers(smallestNumber,number);
+//    }
+//  return smallestNumber;
+//}

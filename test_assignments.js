@@ -26,11 +26,11 @@ assert.deepEqual(lib.calculateSum([1,2]),3);
 
 //tests for reversing an array
 // empty array should give me back an empty array
-assert.deepEqual(lib.reverseArray([]),[]);
+assert.deepEqual(lib.reverse([]),[]);
 // 1 element array should give back that element
-assert.deepEqual(lib.reverseArray([2]),[2]);
+assert.deepEqual(lib.reverse([2]),[2]);
 // 2 element array should give back the reversed array
-assert.deepEqual(lib.reverseArray([2,3]),[3,2]);
+assert.deepEqual(lib.reverse([2,3]),[3,2]);
 
 //tests for selecting every 2nd element of array
 //empty array should give me back 
@@ -47,3 +47,19 @@ assert.deepEqual(lib.reverseFibonacci(0),[]);
 assert.deepEqual(lib.reverseFibonacci(1),[0]);
 //2 should give me back an array [1,0]
 assert.deepEqual(lib.reverseFibonacci(2),[1,0]);
+
+////tests for finding greatest number from a list
+////empty list should give me undefined
+//assert.deepEqual(lib.findGreatestNumber([]),undefined);
+////one element array should give me back that number only
+//assert.deepEqual(lib.findGreatestNumber([1]),1);
+////two number array should give me back the largest number
+//assert.deepEqual(lib.findGreatestNumber([1,2]),2);
+//
+////tests for finding smallest number from a list
+////empty list should give me undefined
+//assert.deepEqual(lib.findSmallestNumber([]),undefined);
+////1 element array should give me back that element
+//assert.deepEqual(lib.findSmallestNumber([1]),1);
+////2 element array should give me back smaller element
+//assert.deepEqual(lib.findSmallestNumber([1,2]),1);
