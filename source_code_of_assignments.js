@@ -107,13 +107,13 @@ exports.calculateAverage = function(numbers){
 
 exports.calculateSum = calculateSum;
 
-//exports.mapLength = function(givenStrings){
-//  let lengthArray = [];
-//  if(isEmpty(givenStrings)){
-//    lengthArray.push(0);
-//  }
-//  for(let string of givenStrings){
-//    lengthArray.push(string.length);
-//  }
-//  return lengthArray;
-//}
+exports.mapLength = function(givenStrings){
+  let lengthArray = [];
+  if(isEmpty(givenStrings)){
+    lengthArray.push(0);
+  }
+  for(let string of givenStrings){
+    lengthArray.push(string.length);
+  }
+  return lengthArray;
+}
