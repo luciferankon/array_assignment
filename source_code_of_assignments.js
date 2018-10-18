@@ -170,3 +170,12 @@ exports.indexOf = function(element,source){
   let result = findElement(element,source);
   return result.message+result.index;
 }
+
+exports.extractDigits = function(number){
+  let stringNumber = number.toString();
+  let result = [];
+  for(let index=0; index<stringNumber.length; index++){
+    result.push(stringNumber[index]);
+  }
+  return result;
+}

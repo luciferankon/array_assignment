@@ -124,3 +124,9 @@ assert.deepEqual(lib.indexOf(1,[2]),'is not found');
 assert.deepEqual(lib.indexOf(1,[1]),"is found at 0");
 //one duplicate element array should give me back the first index
 assert.deepEqual(lib.indexOf(2,[2,2]),"is found at 0");
+
+//tests for extracting the digits of a number
+//one digit number will give me back that number
+assert.deepEqual(lib.extractDigits(1),["1"]);
+//two digit number should give me back two elements in the array
+assert.deepEqual(lib.extractDigits(12),["1","2"]);
