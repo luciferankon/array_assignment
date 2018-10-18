@@ -142,3 +142,12 @@ exports.countNumbersAbove = function(numbers,threshold){
   return numbersAbove;
 }
 
+exports.countNumbersBelow = function(numbers,threshold){
+  let numbersBelow = 0;
+  for(number of numbers){
+    if(number<threshold){
+      numbersBelow = numbersBelow + 1;
+    }
+  }
+  return numbersBelow;
+}
