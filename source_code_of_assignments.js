@@ -154,9 +154,9 @@ exports.countNumbersBelow = function(numbers,threshold){
 
 const findElement = function(element,source){
   let result = {};
+  result.message = "is not found";
+  result.index = "";
   for( let index in source){
-    result.message = "is not found";
-    result.index = "";
     if(source[index] == element){
       result.message = "is found at ";
       result.index = index;
@@ -166,10 +166,12 @@ const findElement = function(element,source){
   return result;
 }
 
-exports.indexOf = function(element,source){
+const indexOf = function(element,source){
   let result = findElement(element,source);
   return result.message+result.index;
 }
+
+exports.indexOf = indexOf;
 
 exports.extractDigits = function(number){
   let stringNumber = number.toString();
@@ -179,3 +181,14 @@ exports.extractDigits = function(number){
   }
   return result;
 }
+
+exports.pickUnique = function(numbers){
+  let result = [];
+  for(let number of numbers){
+    if(indexOf(number,result)=="is not found"){
+      result.push(number);
+    }
+  }
+  return result;
+}
+

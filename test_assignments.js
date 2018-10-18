@@ -130,3 +130,13 @@ assert.deepEqual(lib.indexOf(2,[2,2]),"is found at 0");
 assert.deepEqual(lib.extractDigits(1),["1"]);
 //two digit number should give me back two elements in the array
 assert.deepEqual(lib.extractDigits(12),["1","2"]);
+
+//tests for finding unique elements of an array
+//empty array should give me back that array
+assert.deepEqual(lib.pickUnique([]),[]);
+//one element array should give me back that array
+assert.deepEqual(lib.pickUnique([1]),[1]);
+//one duplicate element should give me back unique one
+assert.deepEqual(lib.pickUnique([1,1]),[1]);
+//one duplicate and one unique element should give me back two unique elements
+assert.deepEqual(lib.pickUnique([1,1,2]),[1,2]);
