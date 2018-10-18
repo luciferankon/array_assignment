@@ -140,3 +140,11 @@ assert.deepEqual(lib.pickUnique([1]),[1]);
 assert.deepEqual(lib.pickUnique([1,1]),[1]);
 //one duplicate and one unique element should give me back two unique elements
 assert.deepEqual(lib.pickUnique([1,1,2]),[1,2]);
+
+//test for finding union of two arrays
+//two empty array should return me one empty array
+assert.deepEqual(lib.findUnion([],[]),[]);
+//two arrays holding different element should return me array of two elements
+assert.deepEqual(lib.findUnion([1],[2]),[1,2]);
+//two arrays holding same element should return me array of only one elemenet
+assert.deepEqual(lib.findUnion([1],[1]),[1]);

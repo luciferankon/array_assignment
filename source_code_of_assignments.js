@@ -192,3 +192,14 @@ exports.pickUnique = function(numbers){
   return result;
 }
 
+exports.findUnion = function(first,second){
+  let result = first;
+  for(let number of second){
+    if(indexOf(number,result)=="is not found"){
+      result.push(number);
+    }
+  }
+  return result;
+}
+
+
