@@ -151,3 +151,22 @@ exports.countNumbersBelow = function(numbers,threshold){
   }
   return numbersBelow;
 }
+
+const findElement = function(element,source){
+  let result = {};
+  for( let index in source){
+    result.message = "is not found";
+    result.index = "";
+    if(source[index] == element){
+      result.message = "is found at ";
+      result.index = index;
+      return result;
+    }
+  }
+  return result;
+}
+
+exports.indexOf = function(element,source){
+  let result = findElement(element,source);
+  return result.message+result.index;
+}

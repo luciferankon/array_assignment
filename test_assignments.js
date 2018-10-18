@@ -116,3 +116,11 @@ assert.deepEqual(lib.countNumbersBelow([],0),0);
 assert.deepEqual(lib.countNumbersBelow([1],0),0);
 //2 element array one above and one below that threshold should give me 1
 assert.deepEqual(lib.countNumbersBelow([0,2],1),1);
+
+//tests for finding the index of a number
+//element which is not present should give me back -1
+assert.deepEqual(lib.indexOf(1,[2]),'is not found');
+//element which is present should give me back the index of that item
+assert.deepEqual(lib.indexOf(1,[1]),"is found at 0");
+//one duplicate element array should give me back the first index
+assert.deepEqual(lib.indexOf(2,[2,2]),"is found at 0");
