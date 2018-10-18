@@ -100,3 +100,11 @@ assert.deepEqual(lib.countEvenNumbers([1]),0);
 assert.deepEqual(lib.countEvenNumbers([2]),1);
 //an array holding one odd and one even number should return me 1
 assert.deepEqual(lib.countEvenNumbers([1,2]),1);
+
+//tests for counting number above a threshold
+//empty array and a threshold 0 should give me back 0
+assert.deepEqual(lib.countNumbersAbove([],0),0);
+//1 element array and a threshold 0 should give me back 0
+assert.deepEqual(lib.countNumbersAbove([1],0),1);
+//2 element array one above and one below that threshold should give me 1
+assert.deepEqual(lib.countNumbersAbove([0,2],1),1);

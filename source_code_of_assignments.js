@@ -131,3 +131,14 @@ exports.countEvenNumbers = function(numbers){
   let evenNumbers = pickEvenNumbers(numbers);
   return evenNumbers.length;
 }
+
+exports.countNumbersAbove = function(numbers,threshold){
+  let numbersAbove = 0;
+  for(number of numbers){
+    if(number>threshold){
+      numbersAbove = numbersAbove + 1;
+    }
+  }
+  return numbersAbove;
+}
+
