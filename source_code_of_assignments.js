@@ -4,7 +4,7 @@ const isOdd = function(number){
 const isEven = function(number){
   return number % 2 == 0;
 }
-exports.pickOddNumbers = function(numbers){
+const pickOddNumbers = function(numbers){
   let oddNumbers = [];
   for(let number of numbers){
     if(isOdd(number)){
@@ -14,7 +14,9 @@ exports.pickOddNumbers = function(numbers){
   return oddNumbers;
 }
 
-exports.pickEvenNumbers = function(numbers){
+exports.pickOddNumbers = pickOddNumbers;
+
+const pickEvenNumbers = function(numbers){
   let evenNumbers = [];
   for(let number of numbers){
     if(isEven(number)){
@@ -23,6 +25,8 @@ exports.pickEvenNumbers = function(numbers){
   }
   return evenNumbers;
 }
+
+exports.pickEvenNumbers = pickEvenNumbers;
 
 const calculateSum = function(numbers){
   let sum = 0;
@@ -116,4 +120,9 @@ exports.mapLength = function(givenStrings){
     lengthArray.push(string.length);
   }
   return lengthArray;
+}
+
+exports.countOddNumbers = function(numbers){
+  let oddNumbers = pickOddNumbers(numbers);
+  return oddNumbers.length;
 }

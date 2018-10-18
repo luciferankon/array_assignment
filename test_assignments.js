@@ -79,3 +79,13 @@ assert.deepEqual(lib.mapLength([]),[0]);
 assert.deepEqual(lib.mapLength(["ankon"]),[5]);
 //2 elements should give me back an array of the length of those elements
 assert.deepEqual(lib.mapLength(["ankon","dheeraj"]),[5,7]);
+
+//test for counting odd numbers
+//an empty array should give me back 0
+assert.deepEqual(lib.countOddNumbers([]),0);
+//an array holding one odd number should return me 1
+assert.deepEqual(lib.countOddNumbers([1]),1);
+//an array holding one even number should return me 0
+assert.deepEqual(lib.countOddNumbers([2]),0);
+//an array holding one odd and one even number should return me 1
+assert.deepEqual(lib.countOddNumbers([1,2]),1);
