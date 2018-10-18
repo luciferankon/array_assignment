@@ -89,3 +89,14 @@ assert.deepEqual(lib.countOddNumbers([1]),1);
 assert.deepEqual(lib.countOddNumbers([2]),0);
 //an array holding one odd and one even number should return me 1
 assert.deepEqual(lib.countOddNumbers([1,2]),1);
+
+
+//test for counting even numbers
+//an empty array should give me back 0
+assert.deepEqual(lib.countEvenNumbers([]),0);
+//an array holding one odd number should return me 0
+assert.deepEqual(lib.countEvenNumbers([1]),0);
+//an array holding one even number should return me 1
+assert.deepEqual(lib.countEvenNumbers([2]),1);
+//an array holding one odd and one even number should return me 1
+assert.deepEqual(lib.countEvenNumbers([1,2]),1);

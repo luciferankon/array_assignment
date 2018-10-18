@@ -126,3 +126,8 @@ exports.countOddNumbers = function(numbers){
   let oddNumbers = pickOddNumbers(numbers);
   return oddNumbers.length;
 }
+
+exports.countEvenNumbers = function(numbers){
+  let evenNumbers = pickEvenNumbers(numbers);
+  return evenNumbers.length;
+}
