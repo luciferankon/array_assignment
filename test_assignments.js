@@ -206,4 +206,5 @@ assert.deepEqual(lib.partition([],0),[[],[]]);
 assert.deepEqual(lib.partition([1],2),[[1],[]]);
 //an one element array above the threshold should return me that element in array
 assert.deepEqual(lib.partition([2],1),[[],[2]]);
-
+//array holding one element above and one element below the threshold should return me the partitioned array
+assert.deepEqual(lib.partition([1,3],2),[[1],[3]]);
