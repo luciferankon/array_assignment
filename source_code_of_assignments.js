@@ -212,5 +212,13 @@ exports.findIntersection = function(first,second){
   return result;
 }
 
-
+exports.findDifference = function(first,second){
+  let result = [];
+  for(let number of first){
+    if(indexOf(number,second)=="is not found"){
+      result.push(number);
+    }
+  }
+  return result;
+}
 

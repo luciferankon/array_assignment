@@ -158,3 +158,13 @@ assert.deepEqual(lib.findIntersection([1],[2]),[]);
 assert.deepEqual(lib.findIntersection([1],[1]),[1]);
 //two arrays having same and different elements should return me unique common elements
 assert.deepEqual(lib.findIntersection([1,2],[2,3]),[2]);
+
+//tests for finding difference of two arrays
+//two empty array should return me an empty array
+assert.deepEqual(lib.findDifference([],[]),[]);
+//two arrays having different element should return me the element of the first array
+assert.deepEqual(lib.findDifference([1],[2]),[1]);
+//two arrays with same element should return me an empty array
+assert.deepEqual(lib.findDifference([1],[1]),[]);
+//two arrays with same and different elements should return me the unique elements of the first array
+assert.deepEqual(lib.findDifference([1,2],[2,3]),[1]);
