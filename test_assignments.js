@@ -168,3 +168,15 @@ assert.deepEqual(lib.findDifference([1],[2]),[1]);
 assert.deepEqual(lib.findDifference([1],[1]),[]);
 //two arrays with same and different elements should return me the unique elements of the first array
 assert.deepEqual(lib.findDifference([1,2],[2,3]),[1]);
+
+//tests for finding an array is subset of another array or not
+//two empty array should return me true
+assert.deepEqual(lib.isSubset([],[]),true);
+//two arrays with same elements should return me true
+assert.deepEqual(lib.isSubset([1],[1]),true);
+//two arrays with different elements should return me false
+assert.deepEqual(lib.isSubset([1],[2]),false);
+//two arrays with same and different elements should return me false
+assert.deepEqual(lib.isSubset([1,2],[2,3]),false);
+//first array having the same elements of second array but in different order should return me true
+assert.deepEqual(lib.isSubset([1,2,3],[3,1]),true);

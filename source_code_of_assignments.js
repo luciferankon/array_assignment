@@ -222,3 +222,12 @@ exports.findDifference = function(first,second){
   return result;
 }
 
+exports.isSubset = function(sourceArray,arrayToCheck){
+  for(let elements of arrayToCheck){
+    if(indexOf(elements,sourceArray)=="is not found"){
+      return false;
+    }
+  }
+  return true;
+}
+
