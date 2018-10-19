@@ -198,3 +198,12 @@ assert.deepEqual(lib.rotateSource([],0),[]);
 assert.deepEqual(lib.rotateSource([1],1),[1]);
 //two element array rotated by 1 should return me reverse of that array
 assert.deepEqual(lib.rotateSource([1,2],1),[2,1]);
+
+//tests for partitioning array above a threshold
+//an empty array should give me back an empty array
+assert.deepEqual(lib.partition([],0),[[],[]]);
+//an one element array below the threshold should return me that element in array
+assert.deepEqual(lib.partition([1],2),[[1],[]]);
+//an one element array above the threshold should return me that element in array
+assert.deepEqual(lib.partition([2],1),[[],[2]]);
+

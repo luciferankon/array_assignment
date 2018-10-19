@@ -259,3 +259,13 @@ exports.rotateSource = function(source,pivotPoint){
   }
   return result;
 }
+
+exports.partition = function(source,threshold){
+  let result = [[],[]];
+  for(let value of source){
+    let quotient = Math.floor(value/threshold);
+    let index = Math.ceil(quotient/(quotient+1));
+    result[index].push(value);
+  }
+  return result;
+}
