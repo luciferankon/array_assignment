@@ -208,3 +208,13 @@ assert.deepEqual(lib.partition([1],2),[[1],[]]);
 assert.deepEqual(lib.partition([2],1),[[],[2]]);
 //array holding one element above and one element below the threshold should return me the partitioned array
 assert.deepEqual(lib.partition([1,3],2),[[1],[3]]);
+
+//test for an array is in ascending order or not
+//an empty array should return me true
+assert.deepEqual(lib.isAscending([]),true);
+//an one element array should return me true
+assert.deepEqual(lib.isAscending([1]),true);
+//an ascending array should return me true
+assert.deepEqual(lib.isAscending([1,2]),true);
+//an descending array should return me false
+assert.deepEqual(lib.isAscending([2,1]),false);

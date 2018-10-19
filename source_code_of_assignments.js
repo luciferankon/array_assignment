@@ -269,3 +269,12 @@ exports.partition = function(source,threshold){
   }
   return result;
 }
+
+exports.isAscending = function(source){
+  for(let index=1; index<source.length; index++){
+    if(source[index]<source[index-1]){
+      return false;
+    }
+  }
+  return true;
+}
