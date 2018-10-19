@@ -218,3 +218,14 @@ assert.deepEqual(lib.isAscending([1]),true);
 assert.deepEqual(lib.isAscending([1,2]),true);
 //an descending array should return me false
 assert.deepEqual(lib.isAscending([2,1]),false);
+
+//test for an array is in descending order or not
+//an empty array should return me true
+assert.deepEqual(lib.isDescending([]),true);
+//an one element array should return me true
+assert.deepEqual(lib.isDescending([1]),true);
+//an ascending array should return me false
+assert.deepEqual(lib.isDescending([1,2]),false);
+//an descending array should return me true
+assert.deepEqual(lib.isDescending([2,1]),true);
+

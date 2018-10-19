@@ -278,3 +278,12 @@ exports.isAscending = function(source){
   }
   return true;
 }
+
+exports.isDescending = function(source){
+  for(let index=1; index<source.length; index++){
+    if(source[index]>source[index-1]){
+      return false;
+    }
+  }
+  return true;
+}
