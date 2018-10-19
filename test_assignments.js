@@ -190,3 +190,11 @@ assert.deepEqual(lib.zip([1],[1]),[[1,1]]);
 assert.deepEqual(lib.zip([1],[1,2]),[[1,1]]);
 //second array of shoter length should return me the zip array of second array length
 assert.deepEqual(lib.zip([1,2],[1]),[[1,1]]);
+
+//tests for rotating an array
+//an empty array being rotated by 0 should return me empty array
+assert.deepEqual(lib.rotateSource([],0),[]);
+//one element array rotated by 1 should return me that array
+assert.deepEqual(lib.rotateSource([1],1),[1]);
+//two element array rotated by 1 should return me reverse of that array
+assert.deepEqual(lib.rotateSource([1,2],1),[2,1]);

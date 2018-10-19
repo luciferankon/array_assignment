@@ -248,3 +248,14 @@ exports.zip = function(first,second){
   }
   return result;
 }
+
+exports.rotateSource = function(source,pivotPoint){
+  let result = [];
+  for(let index=0; index<pivotPoint; index++){
+    result[source.length-pivotPoint] = source[index];
+  }
+  for(let index=pivotPoint; index<source.length; index++){
+    result[index-pivotPoint] = source[index];
+  }
+  return result;
+}
