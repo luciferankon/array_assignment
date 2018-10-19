@@ -180,3 +180,13 @@ assert.deepEqual(lib.isSubset([1],[2]),false);
 assert.deepEqual(lib.isSubset([1,2],[2,3]),false);
 //first array having the same elements of second array but in different order should return me true
 assert.deepEqual(lib.isSubset([1,2,3],[3,1]),true);
+
+//tests for zip of two arrays
+//two empty array should give me back an empty array
+assert.deepEqual(lib.zip([],[]),[]);
+//two same length array should return me the zip of those
+assert.deepEqual(lib.zip([1],[1]),[[1,1]]);
+//first array of shorter length should return me the zip array of first array length
+assert.deepEqual(lib.zip([1],[1,2]),[[1,1]]);
+//second array of shoter length should return me the zip array of second array length
+assert.deepEqual(lib.zip([1,2],[1]),[[1,1]]);

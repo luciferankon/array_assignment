@@ -231,3 +231,20 @@ exports.isSubset = function(sourceArray,arrayToCheck){
   return true;
 }
 
+const getShorterLength = function(first,second){
+  if(first.length>second.length){
+    return second.length;
+  }
+  return first.length;
+}
+
+exports.zip = function(first,second){
+  let length = getShorterLength(first,second);
+  let result = [];
+  for(let index=0; index<length; index++){
+    let indexArray = [];
+    indexArray.push(first[index],second[index]);
+    result.push(indexArray);
+  }
+  return result;
+}
