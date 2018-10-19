@@ -202,4 +202,15 @@ exports.findUnion = function(first,second){
   return result;
 }
 
+exports.findIntersection = function(first,second){
+  let result = [];
+  for(let number of second){
+    if(indexOf(number,first)!="is not found"){
+      result.push(number);
+    }
+  }
+  return result;
+}
+
+
 

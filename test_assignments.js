@@ -148,3 +148,13 @@ assert.deepEqual(lib.findUnion([],[]),[]);
 assert.deepEqual(lib.findUnion([1],[2]),[1,2]);
 //two arrays holding same element should return me array of only one elemenet
 assert.deepEqual(lib.findUnion([1],[1]),[1]);
+
+//tests for finding intersection of two arrays
+//two empty array should return me one empty array
+assert.deepEqual(lib.findIntersection([],[]),[]);
+//two arrays holding different element should return me an empty array
+assert.deepEqual(lib.findIntersection([1],[2]),[]);
+//two arrays having common elements should return me only one element
+assert.deepEqual(lib.findIntersection([1],[1]),[1]);
+//two arrays having same and different elements should return me unique common elements
+assert.deepEqual(lib.findIntersection([1,2],[2,3]),[2]);
