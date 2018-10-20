@@ -157,18 +157,12 @@ exports.findUnion = function(first,second){
 
 exports.findIntersection = function(first,second){
   return second.filter(function(element){
-    return first.includes(element);
-  });
+    return first.includes(element);});
 }
 
 exports.findDifference = function(first,second){
-  let result = [];
-  for(let number of first){
-    if(indxOf(number,second)=="is not found"){
-      result.push(number);
-    }
-  }
-  return result;
+  return first.filter(function(element){
+    return !second.includes(element);});
 }
 
 exports.isSubset = function(sourceArray,arrayToCheck){
