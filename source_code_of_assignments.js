@@ -101,18 +101,18 @@ const isNumberAbove = function(number,threshold){
   return number>threshold;
 }
 
+const isNumberBelow = function(number,threshold){
+  return number<threshold;
+}
+
 exports.countNumbersAbove = function(numbers,threshold){
-  return numbers.filter(isNumberAbove).length;
+  return numbers.filter(function(number){
+  return number>threshold;}).length;
 }
 
 exports.countNumbersBelow = function(numbers,threshold){
-  let numbersBelow = 0;
-  for(number of numbers){
-    if(number<threshold){
-      numbersBelow = numbersBelow + 1;
-    }
-  }
-  return numbersBelow;
+  return numbers.filter(function(number){
+  return number<threshold;}).length;
 }
 
 const findElement = function(element,source){
