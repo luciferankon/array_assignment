@@ -195,8 +195,8 @@ exports.findDifference = function(first,second){
 }
 
 exports.isSubset = function(sourceArray,arrayToCheck){
-  return arrayToCheck.every(function(element){
-    return sourceArray.includes(element);});
+  let isIncludedInSource = hasElementGenerator(sourceArray);
+  return arrayToCheck.every(isIncludedInSource);
 }
 
 exports.zip = function(first,second){
