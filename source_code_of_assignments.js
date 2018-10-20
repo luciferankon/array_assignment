@@ -190,8 +190,8 @@ exports.findIntersection = function(first,second){
 }
 
 exports.findDifference = function(first,second){
-  return first.filter(function(element){
-    return !second.includes(element);});
+  let isNotIncludedInSecond = doesNotHaveElementGenerator(second);
+  return first.filter(isNotIncludedInSecond);
 }
 
 exports.isSubset = function(sourceArray,arrayToCheck){
