@@ -112,9 +112,18 @@ exports.countNumbersAbove = function(numbers,threshold){
   return numbers.filter(isAboveThreshold).length;
 }
 
+const isNumberBelow = function(number,threshold){
+  return number<threshold;
+}
+const isBelowNumberGenerator = function(threshold){
+  return function(number){
+    return isNumberBelow(number,threshold);
+  }
+}
+
 exports.countNumbersBelow = function(numbers,threshold){
-  return numbers.filter(function(number){
-  return number<threshold;}).length;
+  let isBelowThreshold = isBelowNumberGenerator(threshold);
+  return numbers.filter(isBelowThreshold).length;
 }
 
 const findElement = function(element,source){
