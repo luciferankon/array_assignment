@@ -166,12 +166,8 @@ exports.findDifference = function(first,second){
 }
 
 exports.isSubset = function(sourceArray,arrayToCheck){
-  for(let elements of arrayToCheck){
-    if(indxOf(elements,sourceArray)=="is not found"){
-      return false;
-    }
-  }
-  return true;
+  return arrayToCheck.every(function(element){
+    return sourceArray.includes(element);});
 }
 
 const getShorterLength = function(first,second){
