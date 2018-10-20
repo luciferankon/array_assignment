@@ -97,14 +97,6 @@ exports.countEvenNumbers = function(numbers){
   return evenNumbers.length;
 }
 
-const isNumberAbove = function(number,threshold){
-  return number>threshold;
-}
-
-const isNumberBelow = function(number,threshold){
-  return number<threshold;
-}
-
 exports.countNumbersAbove = function(numbers,threshold){
   return numbers.filter(function(number){
   return number>threshold;}).length;
@@ -129,12 +121,18 @@ const findElement = function(element,source){
   return result;
 }
 
-const indexOf = function(element,source){
+const findIndex = function(element,source){
+  return source.indexOf(element);
+}
+
+exports.findIndex = findIndex;
+
+const indxOf = function(element,source){
   let result = findElement(element,source);
   return result.message+result.index;
 }
 
-exports.indexOf = indexOf;
+exports.indxOf = indxOf;
 
 exports.extractDigits = function(number){
   let stringNumber = number.toString();
@@ -148,7 +146,7 @@ exports.extractDigits = function(number){
 exports.pickUnique = function(numbers){
   let result = [];
   for(let number of numbers){
-    if(indexOf(number,result)=="is not found"){
+    if(indxOf(number,result)=="is not found"){
       result.push(number);
     }
   }
@@ -158,7 +156,7 @@ exports.pickUnique = function(numbers){
 exports.findUnion = function(first,second){
   let result = first;
   for(let number of second){
-    if(indexOf(number,result)=="is not found"){
+    if(indxOf(number,result)=="is not found"){
       result.push(number);
     }
   }
@@ -168,7 +166,7 @@ exports.findUnion = function(first,second){
 exports.findIntersection = function(first,second){
   let result = [];
   for(let number of second){
-    if(indexOf(number,first)!="is not found"){
+    if(indxOf(number,first)!="is not found"){
       result.push(number);
     }
   }
@@ -178,7 +176,7 @@ exports.findIntersection = function(first,second){
 exports.findDifference = function(first,second){
   let result = [];
   for(let number of first){
-    if(indexOf(number,second)=="is not found"){
+    if(indxOf(number,second)=="is not found"){
       result.push(number);
     }
   }
@@ -187,7 +185,7 @@ exports.findDifference = function(first,second){
 
 exports.isSubset = function(sourceArray,arrayToCheck){
   for(let elements of arrayToCheck){
-    if(indexOf(elements,sourceArray)=="is not found"){
+    if(indxOf(elements,sourceArray)=="is not found"){
       return false;
     }
   }
