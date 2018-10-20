@@ -25,18 +25,17 @@ const calculateSum = function(numbers){
 }
 
 exports.reverse = function(source){
-  return source.reverse();
+  return source.slice().reverse();
 }
 
-exports.pickEvenElements = function(elements){
-  let pickedElements = [];
-  for(index in elements){
-    if(index%2==0){
-      pickedElements.push(elements[index]);
-    }
-  }
-  return pickedElements;
+const isIndexEven = function(element,index){
+  return index%2==0;
 }
+
+exports.pickAlternateElements = function(elements){
+  return elements.filter(isIndexEven);
+}
+
 
 exports.reverseFibonacci = function(limit) {
   let fibonacciSeries = [];

@@ -34,11 +34,11 @@ assert.deepEqual(lib.reverse([2,3]),[3,2]);
 
 //tests for picking every 2nd element of array
 //empty array should give me back 
-assert.deepEqual(lib.pickEvenElements([]),[]);
+assert.deepEqual(lib.pickAlternateElements([]),[]);
 //one element array should return me one element array
-assert.deepEqual(lib.pickEvenElements([1]),[1]);
+assert.deepEqual(lib.pickAlternateElements([1]),[1]);
 //two element array should give me odd position element back
-assert.deepEqual(lib.pickEvenElements([1,2]),[1]);
+assert.deepEqual(lib.pickAlternateElements([1,2]),[1]);
 
 //tests for reverse fibonacci
 //0 should give me back an empty array
