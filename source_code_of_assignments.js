@@ -4,33 +4,24 @@ const isOdd = function(number){
 const isEven = function(number){
   return number % 2 == 0;
 }
-
-const separateByRemainder = function(numbers){
-  let isolatedOddEven = [[],[]];
-  for(let number of numbers){
-    let index = number%2;
-    isolatedOddEven[index].push(number);
-  }
-  return isolatedOddEven;
-}
 const pickOddNumbers = function(numbers){
-  return separateByRemainder(numbers)[1];
+  return numbers.filter(isOdd);
 }
 
 exports.pickOddNumbers = pickOddNumbers;
 
 const pickEvenNumbers = function(numbers){
-  return separateByRemainder(numbers)[0];
+  return numbers.filter(isEven);
 }
 
 exports.pickEvenNumbers = pickEvenNumbers;
 
+const add = function(first,second){
+  return first+second;
+}
+
 const calculateSum = function(numbers){
-  let sum = 0;
-  for(let number of numbers){
-    sum = sum + number;
-  }
-  return sum;
+  return numbers.reduce(add,0);
 }
 
 exports.reverse = function(source){
