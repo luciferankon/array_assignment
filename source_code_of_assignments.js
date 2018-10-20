@@ -219,14 +219,12 @@ exports.rotateSource = function(source,pivotPoint){
 }
 
 exports.partition = function(source,threshold){
-  let result = [[],[]];
-  result[0] = source.filter(function(element){
-    return element<threshold;
-  });
-  result[1] = source.filter(function(element){
-    return element>threshold;
-  });
-  return result;
+  return source.reduce(function(result,element){
+    if(element<threshold){
+      return [result[0].concat(element),result[1]];
+    }
+    return [result[0],result[1].concat(element)];
+  },[[],[]]);
 }
 
 exports.isAscending = function(source){
