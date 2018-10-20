@@ -167,16 +167,26 @@ exports.pickUnique = function(numbers){
   return result;
 }
 
-exports.findUnion = function(first,second){
-  return first.concat(
-    second.filter(function(element){
+const doesNotHaveElementGenerator = function(first){
+  return function(element){
     return !first.includes(element);
-  }));
+  }
+}
+
+exports.findUnion = function(first,second){
+  let isNotIncludedInFirst= doesNotHaveElementGenerator(first);
+  return first.concat(second.filter(isNotIncludedInFirst));
+}
+
+const hasElementGenerator = function(first){
+  return function(element){
+    return first.includes(element);
+  }
 }
 
 exports.findIntersection = function(first,second){
-  return second.filter(function(element){
-    return first.includes(element);});
+  let isIncludedInFirst = hasElementGenerator(first);
+  return second.filter(isIncludedInFirst);
 }
 
 exports.findDifference = function(first,second){
