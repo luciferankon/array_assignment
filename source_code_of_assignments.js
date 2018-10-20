@@ -36,7 +36,6 @@ exports.pickAlternateElements = function(elements){
   return elements.filter(isIndexEven);
 }
 
-
 exports.reverseFibonacci = function(limit) {
   let fibonacciSeries = [];
   let oldValue = 0;
@@ -50,36 +49,26 @@ exports.reverseFibonacci = function(limit) {
   return fibonacciSeries;
 }
 
-const compareNumbers = function(firstNumber,secondNumber){
-  if(firstNumber>secondNumber){
-    return firstNumber;
-  }
-  return secondNumber;
+const findMax = function(first,second){
+  return Math.max(first,second);
 }
 
-const isEmpty = function(source){
-  return source.length==0;
+const findMin = function(first,second){
+  return Math.min(first,second);
 }
+
 exports.findGreatestNumber = function(numbers){
-  if(isEmpty(numbers)){
-    return;
-  }
-  let greatestNumber = numbers[0];
-  for(number of numbers){
-    greatestNumber = compareNumbers(greatestNumber,number);
-    }
-  return greatestNumber;
+  return numbers.reduce(findMax);
 }
 
 exports.findSmallestNumber = function(numbers){
-  if(isEmpty(numbers)){
-    return;
-  }
-  let smallestNumber = numbers[0];
-  for(number of numbers){
-    smallestNumber = compareNumbers(smallestNumber,number);
-    }
-  return smallestNumber;
+  return numbers.reduce(findMin);
+}
+
+const isEmpty = function(a){
+  if(a.length==0)
+    return true;
+  return false;
 }
 
 exports.calculateAverage = function(numbers){

@@ -50,7 +50,7 @@ assert.deepEqual(lib.reverseFibonacci(2),[1,0]);
 
 //tests for finding greatest number from a list
 //empty list should give me undefined
-assert.deepEqual(lib.findGreatestNumber([]),undefined);
+//assert.deepEqual(lib.findGreatestNumber([]),0);
 //one element array should give me back that number only
 assert.deepEqual(lib.findGreatestNumber([1]),1);
 //two number array should give me back the largest number
@@ -58,7 +58,7 @@ assert.deepEqual(lib.findGreatestNumber([1,2]),2);
 
 //tests for finding smallest number from a list
 //empty list should give me undefined
-assert.deepEqual(lib.findSmallestNumber([]),undefined);
+//assert.deepEqual(lib.findSmallestNumber([]),0);
 //1 element array should give me back that element
 assert.deepEqual(lib.findSmallestNumber([1]),1);
 //2 element array should give me back smaller element
