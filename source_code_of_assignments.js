@@ -25,12 +25,7 @@ const calculateSum = function(numbers){
 }
 
 exports.reverse = function(source){
-  let length = source.length;
-  let result =[];
-  for(let index=0; index< length; index++){
-    result[length-index-1] = source[index];
-}
-  return result;
+  return source.reverse();
 }
 
 exports.pickEvenElements = function(elements){
