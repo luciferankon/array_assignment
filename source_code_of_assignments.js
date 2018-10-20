@@ -156,13 +156,9 @@ exports.findUnion = function(first,second){
 }
 
 exports.findIntersection = function(first,second){
-  let result = [];
-  for(let number of second){
-    if(indxOf(number,first)!="is not found"){
-      result.push(number);
-    }
-  }
-  return result;
+  return second.filter(function(element){
+    return first.includes(element);
+  });
 }
 
 exports.findDifference = function(first,second){
