@@ -97,9 +97,19 @@ exports.countEvenNumbers = function(numbers){
   return evenNumbers.length;
 }
 
+const isNumberAbove = function(number,threshold){
+  return number>threshold;
+}
+
+const isAboveNumberGenerator = function(threshold){
+  return function(number){
+    return isNumberAbove(number,threshold);
+  }
+}
+
 exports.countNumbersAbove = function(numbers,threshold){
-  return numbers.filter(function(number){
-  return number>threshold;}).length;
+  let isAboveThreshold = isAboveNumberGenerator(threshold);
+  return numbers.filter(isAboveThreshold).length;
 }
 
 exports.countNumbersBelow = function(numbers,threshold){
