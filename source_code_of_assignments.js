@@ -97,14 +97,12 @@ exports.countEvenNumbers = function(numbers){
   return evenNumbers.length;
 }
 
+const isNumberAbove = function(number,threshold){
+  return number>threshold;
+}
+
 exports.countNumbersAbove = function(numbers,threshold){
-  let numbersAbove = 0;
-  for(number of numbers){
-    if(number>threshold){
-      numbersAbove = numbersAbove + 1;
-    }
-  }
-  return numbersAbove;
+  return numbers.filter(isNumberAbove).length;
 }
 
 exports.countNumbersBelow = function(numbers,threshold){
