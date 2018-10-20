@@ -74,9 +74,6 @@ const isEmpty = function(a){
 exports.calculateAverage = function(numbers){
   let sum = calculateSum(numbers);
   let noOfNumbers = numbers.length;
-  if(isEmpty(numbers)){
-    return 0;
-  }
   return sum/noOfNumbers;
 }
 
