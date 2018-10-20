@@ -24,6 +24,8 @@ const calculateSum = function(numbers){
   return numbers.reduce(add,0);
 }
 
+exports.calculateSum = calculateSum;
+
 exports.reverse = function(source){
   return source.slice().reverse();
 }
@@ -77,17 +79,12 @@ exports.calculateAverage = function(numbers){
   return sum/noOfNumbers;
 }
 
-exports.calculateSum = calculateSum;
+const calculateLength = function(element){
+  return element.length;
+}
 
 exports.mapLength = function(givenStrings){
-  let lengthArray = [];
-  if(isEmpty(givenStrings)){
-    lengthArray.push(0);
-  }
-  for(let string of givenStrings){
-    lengthArray.push(string.length);
-  }
-  return lengthArray;
+  return givenStrings.map(calculateLength);
 }
 
 exports.countOddNumbers = function(numbers){
