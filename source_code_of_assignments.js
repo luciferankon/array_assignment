@@ -149,10 +149,9 @@ exports.pickUnique = function(numbers){
 }
 
 exports.findUnion = function(first,second){
-  second = second.filter(function(element){
+  return second.filter(function(element){
     return !first.includes(element);
-  });
-  return first.concat(second);
+  }).concat(first);
 }
 
 exports.findIntersection = function(first,second){
