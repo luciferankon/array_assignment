@@ -170,17 +170,10 @@ exports.isSubset = function(sourceArray,arrayToCheck){
     return sourceArray.includes(element);});
 }
 
-const getShorterLength = function(first,second){
-  if(first.length>second.length){
-    return second.length;
-  }
-  return first.length;
-}
-
 exports.zip = function(first,second){
-  let length = getShorterLength(first,second);
+  let shorterLength = Math.min(first.length,second.length);
   let result = [];
-  for(let index=0; index<length; index++){
+  for(let index=0; index<shorterLength; index++){
     let indexArray = [];
     indexArray.push(first[index],second[index]);
     result.push(indexArray);
@@ -190,13 +183,10 @@ exports.zip = function(first,second){
 
 exports.rotateSource = function(source,pivotPoint){
   let result = [];
-  for(let index=0; index<pivotPoint; index++){
-    result[source.length-pivotPoint] = source[index];
-  }
-  for(let index=pivotPoint; index<source.length; index++){
-    result[index-pivotPoint] = source[index];
-  }
-  return result;
+  let length = source.length;
+  return source.map(function(element,index){
+    let rotatedIndex = (index + pivotPoint) % length;
+    return source[rotatedIndex];});
 }
 
 exports.partition = function(source,threshold){
