@@ -135,12 +135,7 @@ const indxOf = function(element,source){
 exports.indxOf = indxOf;
 
 exports.extractDigits = function(number){
-  let stringNumber = number.toString();
-  let result = [];
-  for(let index=0; index<stringNumber.length; index++){
-    result.push(stringNumber[index]);
-  }
-  return result;
+  return number.toString().split("");
 }
 
 exports.pickUnique = function(numbers){
