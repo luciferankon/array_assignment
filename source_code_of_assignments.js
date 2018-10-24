@@ -218,13 +218,22 @@ exports.rotateSource = function(source,pivotPoint){
     return source[rotatedIndex];});
 }
 
+const separateNumbers = function(result,element,threshold){
+  if(element<threshold){
+    return [result[0].concat(element),result[1]];
+  }
+  return [result[0],result[1].concat(element)];
+}
+
+const generatePartitioner = function(threshold){
+  return function(result,element){
+    return separateNumbers(result,element,threshold);
+  }
+}
+
 exports.partition = function(source,threshold){
-  return source.reduce(function(result,element){
-    if(element<threshold){
-      return [result[0].concat(element),result[1]];
-    }
-    return [result[0],result[1].concat(element)];
-  },[[],[]]);
+  let partitioner = generatePartitioner(threshold);
+  return source.reduce(partitioner,[[],[]]);
 }
 
 exports.isAscending = function(source){
