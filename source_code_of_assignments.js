@@ -210,12 +210,21 @@ exports.zip = function(first,second){
   return result;
 }
 
+const generateRotatedSource = function(element,index,source,pivotPoint){
+  let rotatedIndex = (index + pivotPoint) % source.length;
+  return source[rotatedIndex];
+}
+
+const rotateByPivotPoint = function(pivotPoint){
+  return function(element,index,source){
+    return generateRotatedSource(element,index,source,pivotPoint);
+  }
+}
+
 exports.rotateSource = function(source,pivotPoint){
   let result = [];
-  let length = source.length;
-  return source.map(function(element,index){
-    let rotatedIndex = (index + pivotPoint) % length;
-    return source[rotatedIndex];});
+  let takePivotPoint = rotateByPivotPoint(pivotPoint);
+  return source.map(takePivotPoint);
 }
 
 const separateNumbers = function(result,element,threshold){
